@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: #0a0a0a;
+    color: #00f0ff;
+    overflow-x: hidden;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Fundo de partículas */
+canvas#fundo {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -2;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.foto-perfil {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #103d22;
+    box-shadow: 0 0 20px #5e270eaa, 0 0 40px #00f0ff55 inset;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-shadow: 0 0 5px #64310f, 0 0 10px #00f0ffaa;
+}
+
+/* Botão tema */
+#tema-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #111;
+    color: #00f0ff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #00f0ff66, 0 0 40px #00f0ff33 inset;
+    z-index: 1000;
+}
+
+/* Menu */
+nav {
+    background-color: #111;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 0 15px #00f0ff44;
+}
+
+nav a {
+    color: #644112;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 15px #553416;
+}
+
+/* Seções */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    background: rgba(0,0,0,0.7);
+    padding: 40px;
+    margin: 30px 0;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #00f0ff44;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Projetos */
+.projetos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.projeto {
+    flex: 1 1 300px;
+    background: rgba(0,0,0,0.8);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px #00f0ff66;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.projeto img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.projeto.card-flutuante:hover {
+    transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 0 50px #00f0ffaa;
+}
+
+/* Listas */
+ul.lista-experiencia, ul.lista-cursos {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 8px 0;
+}
+
+/* Formulário */
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #00f0ff;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.5);
+    color: #00f0ff;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 15px #8f6d11;
+    background: rgba(0,0,0,0.7);
+}
+
+button {
+    background-color: #6e410e;
+    color: #000;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #6b3a0d;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #723503;
+}
+
+/* WhatsApp */
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 0 25px #25d366aa;
+    animation: flutuar 2s ease-in-out infinite;
+}
+
+/* Fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header h1 { font-size: 1.8rem; }
+    nav a { display: block; margin: 10px 0; }
+    .projetos-container { flex-direction: column; }
+    button { width: 100%; }
+}
